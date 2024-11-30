@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: discord-webhook-monitor
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: TARGET_HOST
+        sync: false
+      - key: DISCORD_WEBHOOK_URL
+        sync: false
+      - key: CHECK_INTERVAL
+        value: 15000
+      - key: STATUS_INTERVAL
+        value: 300000
